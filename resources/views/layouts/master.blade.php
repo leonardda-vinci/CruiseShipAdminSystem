@@ -11,7 +11,6 @@
   <link href="/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 
-
 <body>
   <nav class="white" role="navigation">
     <div class="nav-wrapper/ container">
@@ -38,21 +37,6 @@
 @yield('content')
 
 
-  <footer class="page-footer teal">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Group Bio</h5>
-          <p class="grey-text text-lighten-4">Speeds up development | User Experience Focused | Easy to work with | This project is for CIT17 section CITCS 3C-2 </p>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
-      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Group 1 ( Using UI  - Paralax Template)</a>
-      </div>
-    </div>
-  </footer>
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="/js/materialize.js"></script>
