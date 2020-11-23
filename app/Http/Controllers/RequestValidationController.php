@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\RequestValidation;
+use RequestValidation;
 use Illuminate\Http\Request;
 
 class RequestValidationController extends Controller
