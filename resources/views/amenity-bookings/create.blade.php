@@ -5,6 +5,7 @@
 			<div class = "col 12">
 				<h5>Create Bookings</h5>
 				<form action="/bookings" method='POST'>
+					@inclue('layouts.error')
 					@csrf 
 					<div class="row">
 				 		<form class="col s12">

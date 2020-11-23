@@ -11,7 +11,7 @@ Route::get('templates/sign-in', 'TemplatesController@signIn');
 
 //crud for amenity bookings
 //eloquent
-Route::get('/', 'AmenityBookingsController@index');
+Route::get('/amebook', 'AmenityBookingsController@index');
 
 Route::get('/bookings/{book}', 'AmenityBookingsController@show');
 

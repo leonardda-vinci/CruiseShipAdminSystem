@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-//use App\Bookings;
+use App\Bookings;
 use Illuminate\Http\Request;
 
 class AmenityBookingsController extends Controller
@@ -20,17 +20,36 @@ class AmenityBookingsController extends Controller
     }
 
     public function create(){
-    	return view('amenity-bookings.create');
+    	request()->validate([
+    		'passenger_name' => 'required',
+    		'amenity_name' => 'required'
+
+    	]);
+
+    	$book = ['passenger_name' => request()->passenger_name, 'amenity_name' => request()->amenity_name];
+    	if(Bookings::attempt($book)) {
+    		return redirect('/amebook');
+    	}
+    	return back()->withErrors([
+    		'book' => 'Invalid input'
+    	]);
     }
-// startqweqwe
   
     public function store(){
+    	$validated_fields = request()->validate([
+    		'passenger_name' => 'required',
+    		'amenity_name' => 'required|unique:amenity-bookings'
+
+    	]);
+    	$book = Bookings::create($validated_fields);
+
         $book = new Bookings;
         $book->passenger_name = request()->passenger_name;
         $book->amenity_name = request()->amenity_name;
         $book->save();
 
-        return redirect('/');
+
+        return redirect('/amebook');
     }
 
     public function edit(Bookings $book){
@@ -48,7 +67,7 @@ class AmenityBookingsController extends Controller
 
     public function destroy(Bookings $book){
     	$book->delete();
-    	return redirect('/');
+    	return redirect('/amebook');
     }
    
 }
