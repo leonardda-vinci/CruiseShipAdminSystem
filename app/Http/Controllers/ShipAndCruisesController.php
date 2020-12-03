@@ -30,13 +30,19 @@ class ShipAndCruisesController extends Controller
     }
     public function store()
     {
+    	$validated_fields = request()->validate([
     	$ShipAndCruises = new ShipAndCruises
     	$ShipAndCruises->ID = request()->ID;
     	$ShipAndCruises->ShipName = request()->ShipName;
     	$ShipAndCruises->ShipType = request()->ShipType;
-    	$room->save();
+    	$ShipAndCruises->save();
+    ]);
+
+    	$ShipAndCruises = User::create($validated_fields);
 
     	return redirect('/ShipAndCruises');
+
+
     }
     public function edit(ShipAndCruises $ShipAndCruises)
     {
