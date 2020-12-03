@@ -19,10 +19,9 @@ class ShipAndCruisesController extends Controller
 
     public function create()
     {
-    	$ID =['B321','B322','B323']
-    	return view('ShipAndCruises.create', compact('ID'));
 
-    	$ShipType =['Cruise','Vessel']
+
+    	$ShipType =['Cruise','Vessel'];
     	return view('ShipAndCruises.create', compact('ShipType'));
 
 
@@ -31,6 +30,34 @@ class ShipAndCruisesController extends Controller
     }
     public function store()
     {
-    	$
+    	$ShipAndCruises = new ShipAndCruises
+    	$ShipAndCruises->ID = request()->ID;
+    	$ShipAndCruises->ShipName = request()->ShipName;
+    	$ShipAndCruises->ShipType = request()->ShipType;
+    	$room->save();
+
+    	return redirect('/ShipAndCruises');
+    }
+    public function edit(ShipAndCruises $ShipAndCruises)
+    {
+  
+    	$ShipType =['Cruise','Vessel'];
+    	return view('ShipAndCruises.edit', compact('ShipAndCruises','ID','ShipType'))
+
+    }
+    public function update(ShipAndCruises $ShipAndCruises)
+    {
+    	$ShipAndCruises->ID = request()->ID;
+    	$ShipAndCruises->ShipName = request()->ShipName;
+    	$ShipAndCruises->ShipType = request()->ShipType;
+    	$room->save();
+    	return redirect('/ShipAndCruises');
+
+    }
+    public function delete(ShipAndCruises $ShipAndCruises)
+    {
+    	$ShipAndCruises->delete();
+    	return redirect('?ShipAndCruises');
+
     }
 }
