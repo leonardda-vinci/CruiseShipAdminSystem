@@ -68,7 +68,7 @@
         <div class="flex-center position-ref full-height">
                 <div class="top-right links">
                       <div class="top-right links">
-                <a href="/templates/Amenities">Amenities</a>
+                <a href="/templates">Amenities</a>
                 </div> 
             <div class="content">
                 </div>
