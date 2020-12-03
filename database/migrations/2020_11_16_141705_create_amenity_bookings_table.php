@@ -16,10 +16,7 @@ class CreateAmenityBookingsTable extends Migration
         Schema::create('amenity_bookings', function (Blueprint $table) {
             $table->id();
             $table->string('passenger_name');
-            $table->string('total_passengers_reserved');
             $table->string('amenity_name');
-            $table->date('date_reserved');
-            $table->decimal('total_payment', 10, 2);
             $table->timestamps();
         });
     }
