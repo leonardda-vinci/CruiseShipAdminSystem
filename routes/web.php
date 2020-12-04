@@ -28,7 +28,7 @@ Route::delete('/bookings/{book}', 'AmenityBookingsController@destroy');
 
 
 //crud for Ship and Cruises
-Route::get('/ShipAndCruises','ShipAndCruisesController@index')
+Route::get('/ShipAndCruises','ShipAndCruisesController@index');
 //create
 Route::get('/ShipAndCruises/{ShipAndCruises}', 'ShipAndCruisesController@show');
 
