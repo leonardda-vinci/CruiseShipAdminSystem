@@ -11,6 +11,7 @@ Route::get('templates/sign-in', 'TemplatesController@signIn');
 
 //crud for attendants
 Route::get('/', 'AttendantsController@index');
+Route::get('/attendant', 'AttendantsController@index');
 Route::get('/attendants/{attendant}', 'AttendantsController@show');
 Route::get('/attendants/{attendant}/edit', 'AttendantsController@edit');
 Route::get('/attendants/create', 'AttendantsController@create');
