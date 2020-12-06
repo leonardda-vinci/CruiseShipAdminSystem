@@ -18,9 +18,9 @@
 				     	<div class="row">
 				        	<div class="input-field col s12">
 				          		<input id="position" type="text" class="validate">
-				          		<label for="position">Amenity Name</label>
+				          		<label for="position">Position</label>
 				          		<input id="gender" type="text" class="validate">
-				          		<label for="gender">Amenity Name</label>
+				          		<label for="gender">Gender</label>
 				        </div>
 				    </div>
 				    <div class="row">
